@@ -1,5 +1,6 @@
 import Header from "./components/Header";
-import RefLogin from "./components/RefLogin";
+import Signup from "./components/Signup";
+// import RefLogin from "./components/RefLogin";
 // import StateLogin from "./components/StateLogin";
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
     <div className="app">
       <Header />
       {/* <StateLogin /> */}
-      <RefLogin />
+      {/* <RefLogin /> */}
+      <Signup />
     </div>
   );
 }
