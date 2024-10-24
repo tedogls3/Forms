@@ -1,4 +1,4 @@
-function Login() {
+function RefLogin() {
   return (
     <form>
       <h2>Login</h2>
@@ -23,4 +23,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default RefLogin;
