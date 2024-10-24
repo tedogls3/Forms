@@ -31,16 +31,21 @@ function StateLogin() {
   };
 
   const emailIsInvalid = didEdit.email && !enteredValues.email.includes("@");
+  const passwordIsInvalid =
+    didEdit.password && enteredValues.password.length < 6;
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(
-      "Email:",
-      enteredValues.email,
-      "Password:",
-      enteredValues.password
-    );
+    if (!enteredValues.email.length) return;
+
+    console.log("http request sent!");
+    setEnteredValues({
+      email: "",
+      password: "",
+    });
+
+    setDidEdit(false);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -68,9 +73,13 @@ function StateLogin() {
             id="password"
             type="password"
             name="password"
+            onBlur={() => handleInputBlur("password")}
             value={enteredValues.password}
             onChange={(e) => handleInputChange("password", e.target.value)}
           />
+          <div className="control-error">
+            {passwordIsInvalid && <p>Password shoud be minium 6 characters.</p>}
+          </div>
         </div>
       </div>
 
